@@ -1,0 +1,47 @@
+/* src/App.css */
+
+.app-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-ink);
+  position: relative;
+}
+
+.main-content {
+  flex: 1;
+  width: 100%;
+  padding-top: var(--header-height);
+  padding-bottom: calc(var(--footer-height) + env(safe-area-inset-bottom));
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  display: flex;
+  flex-direction: column;
+  scroll-behavior: smooth;
+}
+
+.content-wrapper {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Warm ambient wash behind the app — mimics the venue's glow lighting */
+.ambient-glow {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(60% 40% at 50% 0%, rgb(201 162 39 / 0.10), transparent 70%),
+    radial-gradient(50% 35% at 85% 100%, rgb(140 47 57 / 0.10), transparent 70%);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  scrollbar-width: none;
+}

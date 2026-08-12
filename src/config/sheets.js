@@ -15,7 +15,7 @@ const PUBLISHED_BASE =
 // The `Wine List` tab. Pinned explicitly rather than relying on tab order —
 // without a gid the export serves whichever sheet happens to be first, so the
 // day someone drags a tab to the front the app would quietly serve wrong data.
-const WINE_LIST_GID = '377746028';
+const WINE_LIST_GID = '1893733504';
 
 const buildURL = (gid) =>
   gid

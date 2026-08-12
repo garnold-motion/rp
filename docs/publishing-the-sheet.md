@@ -121,7 +121,10 @@ rollback.
 2. Run the app and check the Cellar tab fills.
 3. Change one price in the sheet, wait fifteen minutes, hard-refresh the app,
    and confirm it moved. Do this once so you know the pipeline works end to end.
-4. **Retire `data/tasting-notes.json`.** From here the sheet is the source of
-   truth, and re-running the migration months from now would overwrite whatever
-   the owner has added. Keep the file as a record, but don't run the script
-   against the live sheet.
+4. **Done — the sheet is now the source of truth.** The old scaffolding
+   (`data/tasting-notes.json`, `scripts/add_tasting_notes.py`) has been removed
+   so nothing can overwrite what the venue edits. `scripts/migrate_sheet.py` is
+   kept only as a starting point for the next client and is marked retired.
+
+   To add tasting notes from here, paste them straight into the sheet — never
+   regenerate the workbook.

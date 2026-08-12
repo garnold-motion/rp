@@ -4,6 +4,10 @@ dist-ssr
 *.local
 .DS_Store
 
+# Python bytecode from the one-off sheet migration scripts
+__pycache__/
+*.pyc
+
 # Editor
 .vscode/*
 !.vscode/extensions.json

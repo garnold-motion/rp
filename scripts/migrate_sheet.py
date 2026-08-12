@@ -1,7 +1,16 @@
 #!/usr/bin/env python3
 """
-The Running Postman — wine list migration
-=========================================
+The Running Postman — wine list migration   [RETIRED — DO NOT RUN]
+==================================================================
+
+*** This has already been run. The live Google Sheet is now the source of  ***
+*** truth. Running it again would rebuild a sheet from the original messy  ***
+*** workbook and throw away everything the venue has edited since.         ***
+
+Kept because the next hospitality client will arrive with the same kind of
+spreadsheet — section banners typed into cells, wines duplicated to act as
+flags, prices in the vintage column — and this already solves that. Treat it as
+a starting point to adapt, not something to execute against a live sheet.
 
 Reads the exported workbook and produces a single clean, sortable spreadsheet.
 
@@ -58,8 +67,10 @@ HEADERS = [
 # answer to "how many have we got". `Available` is the only stock-ish field: it
 # controls whether a wine shows in the app, nothing more.
 
-# Where the hand-written tasting data lives. Kept out of the spreadsheet so that
-# re-running this migration never destroys it.
+# Where hand-written tasting data was merged from during the original run. That
+# file has since been removed — the live sheet owns this data now — so the merge
+# step simply no-ops. Left in place because the pattern is worth reusing for the
+# next venue.
 NOTES_FILE = "data/tasting-notes.json"
 
 SECTION_MAP = {

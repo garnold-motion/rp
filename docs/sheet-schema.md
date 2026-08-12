@@ -1,7 +1,11 @@
-# The wine sheet: target structure
+# The wine sheet: structure
 
-The schema the `APP Link` tab should move to, why each decision was made, and how
-to get there without risking the existing data.
+> **This migration is done.** The live Google Sheet already uses this schema —
+> what follows is the reference for what each column means and why, plus the
+> steps that were taken to get there. Kept as documentation, and as the starting
+> point for the next venue.
+
+The schema the wine list uses, and why each decision was made.
 
 Designed for **list management only** — stocktake columns are reserved but
 optional, so that phase can be added later without another migration.
@@ -146,7 +150,7 @@ be added — then tidied into the list later.
 
 1. **Duplicate the whole spreadsheet first.** File → Make a copy, name it
    `Wine List — ARCHIVE (pre-migration)`. Non-negotiable.
-2. Run the migration script (`scripts/migrate-sheet.gs`). It writes new tabs and
+2. Run the migration script (`scripts/migrate_sheet.py`). It writes new tabs and
    never touches the original.
 3. Check the `Migration Review` tab and resolve anything on it.
 4. Rename the clean tab to `APP Link` once you're happy, and move it to first

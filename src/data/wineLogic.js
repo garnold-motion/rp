@@ -233,6 +233,11 @@ export function vectorFromAnswers(answers) {
  * is drinking on its own — meaning "don't filter on food at all".
  */
 export function pairingFromAnswers(answers) {
+  // Drinking without food is its own preference, not an absence of one — it
+  // favours the aperitif styles. This used to return an empty array, which
+  // meant `just_drinking` was tagged on wines but never actually matched
+  // against anything.
+  if (answers.eating === 'solo') return ['just_drinking'];
   if (answers.eating !== 'food') return [];
   return answers.plate === 'sea'
     ? ['seafood']
